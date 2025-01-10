@@ -233,4 +233,8 @@ public class Model {
     return outputProbabilities.argmax();
   }
 
+  public MultiLayerNeuralNetwork network() {
+    return model;
+  }
+
 }
