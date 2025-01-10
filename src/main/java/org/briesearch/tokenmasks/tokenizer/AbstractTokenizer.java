@@ -14,6 +14,7 @@ public abstract class AbstractTokenizer {
   protected final boolean allowRegistrations;
   protected final boolean lowercaseTokens;
   protected final boolean fitUponTokenization;
+  protected final boolean simpleTokens;
 
   public AbstractTokenizer(TokenizerBuilder builder) {
     delimiter = builder.delimiter;
@@ -21,5 +22,6 @@ public abstract class AbstractTokenizer {
     allowRegistrations = builder.allowRegistrations;
     lowercaseTokens = builder.lowercaseTokens;
     fitUponTokenization = builder.fitUponTokenization;
+    simpleTokens = builder.simpleTokens;
   }
 }

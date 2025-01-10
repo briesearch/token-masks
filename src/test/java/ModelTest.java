@@ -14,6 +14,9 @@ import java.util.Map;
 public class ModelTest {
   public static void main(String[] args) {
     Tokenizer tokenizer = new TokenizerBuilder()
+      /* Simple tokens are less efficient for training,
+       * however they are easier to use in this example */
+      .simpleTokens()
       .build();
 
     Map<String, String> samples = new HashMap<>();

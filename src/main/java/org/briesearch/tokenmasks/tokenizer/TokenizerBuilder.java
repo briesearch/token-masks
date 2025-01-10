@@ -17,6 +17,7 @@ public class TokenizerBuilder {
   protected boolean fitUponTokenization;
   protected boolean optTokens;
   protected boolean whitespacePlaceholder;
+  protected boolean simpleTokens;
 
   public TokenizerBuilder includeUnseenTokens() {
     allowRegistrations = true;
@@ -40,6 +41,11 @@ public class TokenizerBuilder {
 
   public TokenizerBuilder optTokens() {
     optTokens = true;
+    return this;
+  }
+
+  public TokenizerBuilder simpleTokens() {
+    simpleTokens = true;
     return this;
   }
 

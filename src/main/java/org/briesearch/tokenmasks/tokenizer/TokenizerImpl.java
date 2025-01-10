@@ -1,6 +1,7 @@
 package org.briesearch.tokenmasks.tokenizer;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -35,6 +36,14 @@ public class TokenizerImpl extends AbstractTokenizer implements Tokenizer {
       text = text.toLowerCase();
 
     List<String> tokens = new ArrayList<>();
+    if (simpleTokens) {
+      String[] spl = text.split("\\s+");
+      Collections.addAll(tokens, spl);
+      if (fitUponTokenization)
+        fit(tokens);
+      return tokens;
+    }
+
     Matcher matcher = delimiter.matcher(text);
     int previousEnd = 0;
 
