@@ -5,6 +5,7 @@ import io.arctis.aurora.algebraic.ContextVector;
 import io.arctis.aurora.model.ActivationFunction;
 import io.arctis.aurora.ops.Kwargs;
 import io.arctis.aurora_deep.BuildLayer;
+import io.arctis.aurora_deep.MultiLayerNeuralNetBuilder;
 import io.arctis.aurora_deep.MultiLayerNeuralNetwork;
 import org.briesearch.tokenmasks.tokenizer.Tokenizer;
 
@@ -90,6 +91,15 @@ public class Model {
     return this;
   }
 
+  @Nonnull
+  public Model construct(MultiLayerNeuralNetBuilder model) {
+    this.model = model
+      .seed(seed)
+      .inputSize(n_vocab * (n_tokens + 1))
+      .build();
+    return this;
+  }
+
   /**
    * Constructs the model by creating a new MultiLayerNeuralNetwork instance.
    * The network configuration includes an input size, a hidden layer, and an output layer.
@@ -100,7 +110,7 @@ public class Model {
   public Model construct() {
     return construct(
       MultiLayerNeuralNetwork.configureContexts()
-        .seed(24)
+        .seed(seed)
         .inputSize(n_vocab * (n_tokens + 1))
         .addLayer(new BuildLayer()
           .size(32)
