@@ -11,7 +11,7 @@ This is a machine learning experiment that leverages a deep neural network to pr
 
 ## Requirements
 - Java 8 or higher
-- [Aurora](https://github.com/AcaiSoftware/aurora) for neural network operations - 1.0.1 version
+- [Aurora](https://github.com/AcaiSoftware/aurora) for neural network operations - version `1.0.1`
 
 ## Installation
 
