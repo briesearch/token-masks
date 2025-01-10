@@ -1,6 +1,6 @@
 # Token Masks
 
-This is a machine learning experiment that leverages a deep neural networks to predict masked words in sentences. The model uses a simple custom tokenizer and generates predictions for text with a "MASK" token, allowing you to easily substitute the masked word.
+This is a machine learning experiment that leverages a deep neural network to predict masked words in sentences. The model uses a simple custom tokenizer and generates predictions for text with a "MASK" token, allowing you to easily substitute the masked word.
 
 ## Features
 - **Tokenization**: Supports custom tokenization for handling input text with a "MASK" token.
